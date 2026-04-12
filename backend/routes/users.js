@@ -11,4 +11,10 @@ router.get("/register", (req, res) => {
     res.send("get req to /register");
 })
 
+router.get("/dashboard", (req, res) => {
+    res.json({
+        message: "Got dashboard message"
+    })
+})
+
 module.exports = router
