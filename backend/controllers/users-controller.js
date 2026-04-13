@@ -5,6 +5,11 @@ async function getAllUsers() {
     return users;
 }
 
+async function addUser(username, password) {
+    db.insertUser(username, password);
+    console.log("controller called to add user");
+}
 
 
-module.exports = { getAllUsers }
+
+module.exports = { getAllUsers, addUser }

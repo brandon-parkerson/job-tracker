@@ -5,13 +5,18 @@ const app = express()
 const router = express.Router()
 const usersRouter = require("./routes/users")
 
+
 // cors to allow frontend to send reqs to backend
 app.use(cors())
+// parses req json bodies
+app.use(express.json());
+// parse url-encoded form data
+app.use(express.urlencoded({ extended: true }))
 
 // Job tracker features: job entries, application status, dates (applied, follow-up, interview), notes
 // Analytics: Application to interview rate, interview to offer rate, time to response, which platforms work best
 
-// TODO: set up database 
+// TODO: add user query post request, authentication, frontend form 
 
 app.use("/api/", usersRouter);
 app.use("/api/register", usersRouter);

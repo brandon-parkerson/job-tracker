@@ -11,6 +11,16 @@ router.get("/", (req, res) => {
 router.get("/register", (req, res) => {
     res.send("get req to /register");
 })
+router.post("/register", async (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    await usersController.addUser(username, password);
+
+    res.json({
+        username: username,
+        password: password,
+    })
+})
 
 router.get("/dashboard", (req, res) => {
     res.json({
