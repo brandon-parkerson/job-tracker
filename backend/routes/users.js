@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+const usersController = require("../controllers/users-controller")
 
 router.get("/", (req, res) => {
     res.json({
@@ -22,4 +23,13 @@ router.get("/analytics", (req, res) => {
         message: "Got the analytics message"
     })
 })
+
+router.get("/users", async (req, res) => {
+    const users = await usersController.getAllUsers()
+    res.json({
+        users
+    })
+})
+
+
 module.exports = router

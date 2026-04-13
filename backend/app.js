@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require('express');
 const cors = require("cors")
 const app = express()
@@ -10,12 +11,13 @@ app.use(cors())
 // Job tracker features: job entries, application status, dates (applied, follow-up, interview), notes
 // Analytics: Application to interview rate, interview to offer rate, time to response, which platforms work best
 
-// TODO:set up database 
+// TODO: set up database 
 
 app.use("/api/", usersRouter);
 app.use("/api/register", usersRouter);
 app.use("/api/dashboard", usersRouter);
 app.use("/api/analytics", usersRouter);
+app.use("/api/users", usersRouter);
 
 
 app.listen(3000, () => {
