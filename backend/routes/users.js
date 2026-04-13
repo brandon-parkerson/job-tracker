@@ -17,4 +17,9 @@ router.get("/dashboard", (req, res) => {
     })
 })
 
+router.get("/analytics", (req, res) => {
+    res.json({
+        message: "Got the analytics message"
+    })
+})
 module.exports = router

@@ -10,11 +10,12 @@ app.use(cors())
 // Job tracker features: job entries, application status, dates (applied, follow-up, interview), notes
 // Analytics: Application to interview rate, interview to offer rate, time to response, which platforms work best
 
-// TODO: routes -- dashboard, open specific job to look at notes
+// TODO:set up database 
 
 app.use("/api/", usersRouter);
 app.use("/api/register", usersRouter);
-app.use("/api/dashboard", usersRouter)
+app.use("/api/dashboard", usersRouter);
+app.use("/api/analytics", usersRouter);
 
 
 app.listen(3000, () => {
